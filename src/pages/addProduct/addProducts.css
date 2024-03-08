@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+.form h2 {
+  text-align: center;
+}
+.add-btn {
+  display: block;
+  width: 50%;
+  margin: 10px auto !important;
+}
