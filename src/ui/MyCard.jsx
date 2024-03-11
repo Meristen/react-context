@@ -6,10 +6,13 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { productsContext } from "../contexts/ProductsContextPovider";
 
 const MyCard = ({ data }) => {
+  const { deleteProduct } = useContext(productsContext);
+  //   console.log(deleteProduct, "deletePr");
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia sx={{ height: 140 }} image={data.image} title="green iguana" />
@@ -28,7 +31,11 @@ const MyCard = ({ data }) => {
         <Link to={`/edit/${data.id}`}>
           <Button size="small">Edit</Button>
         </Link>
-        <Button color="error" size="small">
+        <Button
+          onClick={() => deleteProduct(data.id)}
+          color="error"
+          size="small"
+        >
           Delete
         </Button>
       </CardActions>

@@ -26,10 +26,16 @@ const ProductsContextPovider = ({ children }) => {
     await axios.patch(`${PRODUCTS_API}/${id}`, editedObj);
     getProducts();
   }
+  // ! delete
+  async function deleteProduct(id) {
+    await axios.delete(`${PRODUCTS_API}/${id}`);
+    getProducts();
+  }
   return (
     <productsContext.Provider
       value={{
         products,
+        deleteProduct,
         editedProduct,
         getOneProduct,
         addProduct,
