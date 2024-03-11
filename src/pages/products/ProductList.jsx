@@ -8,6 +8,7 @@ const ProductList = () => {
     console.log(products);
     getProducts();
   }, []);
+
   console.log(products);
   return (
     <div className="products">

@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyCard = ({ data }) => {
   return (
@@ -24,7 +25,9 @@ const MyCard = ({ data }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Edit</Button>
+        <Link to={`/edit/${data.id}`}>
+          <Button size="small">Edit</Button>
+        </Link>
         <Button color="error" size="small">
           Delete
         </Button>
