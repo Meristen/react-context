@@ -1,9 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { productsContext } from "../../contexts/ProductsContextPovider";
-
+import MyCard from "../../ui/MyCard";
+import "./products.css";
 const ProductList = () => {
   const { products, getProducts } = useContext(productsContext);
-  return <div>ProductList</div>;
+  useEffect(() => {
+    console.log(products);
+    getProducts();
+  }, []);
+  console.log(products);
+  return (
+    <div className="products">
+      {products.map((card) => (
+        <MyCard key={card.id} data={card} />
+      ))}
+    </div>
+  );
 };
 
 export default ProductList;

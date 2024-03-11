@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import "./addProducts.css";
 import { productsContext } from "../../contexts/ProductsContextPovider";
 import { useNavigate } from "react-router-dom";
+
 const AddProduct = () => {
   const { addProduct } = useContext(productsContext);
   const [product, setProduct] = useState({
