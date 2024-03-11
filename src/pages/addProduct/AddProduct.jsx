@@ -33,6 +33,7 @@ const AddProduct = () => {
       price: "",
       image: "",
     });
+    console.log(product);
     navigate("/");
   }
   return (

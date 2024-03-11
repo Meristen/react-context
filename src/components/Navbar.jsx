@@ -18,7 +18,7 @@ const pages = [
   { title: "Products", path: "/" },
   { title: "Add Products", path: "/add" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Register", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
