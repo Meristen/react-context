@@ -20,9 +20,8 @@ const pages = [
 ];
 const settings = [
   { title: "Register", path: "register" },
-  { title: "Account", path: "account" },
-  { title: "Dashboard", path: "dashboard" },
-  { title: "Logout", path: "logout" },
+  { title: "Login", path: "login" },
+  { title: "Logout", path: "/" },
 ];
 
 function Navbar() {

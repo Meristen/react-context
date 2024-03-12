@@ -1,22 +1,22 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const RegistPage = () => {
-  // const { registerUsers } = useContext(productsContext);
-  // const [users, setUsers] = useState({
-  //   title: "",
-  //   desc: "",
-  //   price: "",
-  //   image: "",
-  // });
+  // const { registerUsers } = useContext(Context);
+  const [user, setUser] = useState({
+    user: "",
+    email: "",
+    password: "",
+    image: "",
+  });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  // function handleChange(e) {
-  //   const { name, value } = e.target;
-  //   setUsers({ ...users, [name]: value });
-  // }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
   // function onSubmit(e) {
   //   e.preventDefault();
   //   for (let key in users) {
@@ -25,41 +25,42 @@ const RegistPage = () => {
   //       return;
   //     }
   //   }
-  //   registerUsers(users);
-  //   setUsers({
-  //     title: "",
-  //     desc: "",
-  //     price: "",
+  //   registerUser(user);
+  //   setUser({
+  //     user: "",
+  //     email: "",
+  //     password: "",
   //     image: "",
   //   });
-  //   console.log(users);
+  //   console.log(user);
   //   navigate("/");
   // }
+  console.log(user);
   return (
-    <form className="form">
+    <form onSubmit={onsubmit} className="form">
       <h2>Register</h2>
       <TextField
         id="standard-basic"
-        name="title"
-        // value={product.title}
-        // onChange={handleChange}
-        label="Name"
+        name="user"
+        value={user.username}
+        onChange={handleChange}
+        label="UserName"
         variant="standard"
       />
       <TextField
         id="standard-basic"
-        name="desc"
-        // value={product.desc}
-        // onChange={handleChange}
+        name="email"
+        value={user.email}
+        onChange={handleChange}
         label="GMail..."
         variant="standard"
       />
       <TextField
-        type="number"
+        type="text"
         id="standard-basic"
-        name="price"
-        // value={product.price}
-        // onChange={handleChange}
+        name="password"
+        value={user.password}
+        onChange={handleChange}
         label="Password"
         variant="standard"
       />
@@ -67,8 +68,8 @@ const RegistPage = () => {
         type="url"
         id="standard-basic"
         name="image"
-        // value={product.image}
-        // onChange={handleChange}
+        value={user.image}
+        onChange={handleChange}
         label="Image url..."
         variant="standard"
       />

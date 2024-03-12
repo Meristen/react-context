@@ -5,9 +5,7 @@ import AddProduct from "../pages/addProduct/AddProduct";
 import EditProduct from "../pages/editProduct/EditProduct";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
 import RegistPage from "../pages/registr/RegistPage";
-import DashboardPage from "../pages/dashboard/DashboardPage";
-import AccountPage from "../pages/account/AccountPage";
-import LogOutPage from "../pages/logOut/LogOutPage";
+import LoginPage from "../pages/Login/LoginPage";
 
 const MainRoutes = () => {
   return (
@@ -17,9 +15,7 @@ const MainRoutes = () => {
       <Route path="/edit/:id" element={<EditProduct />} />
       <Route path="*" element={<NotFoundPage />} />
       <Route path="/register" element={<RegistPage />} />
-      <Route path="/account" element={<AccountPage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/logout" element={<LogOutPage />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 };
