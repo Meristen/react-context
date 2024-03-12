@@ -17,27 +17,28 @@ const RegistPage = () => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  // function onSubmit(e) {
-  //   e.preventDefault();
-  //   for (let key in users) {
-  //     if (!users[key].trim()) {
-  //       alert("some inputs are empty");
-  //       return;
-  //     }
-  //   }
-  //   registerUser(user);
-  //   setUser({
-  //     user: "",
-  //     email: "",
-  //     password: "",
-  //     image: "",
-  //   });
-  //   console.log(user);
-  //   navigate("/");
-  // }
-  console.log(user);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    for (let key in user) {
+      if (!user[key].trim()) {
+        alert("some inputs are empty");
+        return;
+      }
+      console.log(user);
+    }
+    // registerUser(user);
+    // setUser({
+    //   user: "",
+    //   email: "",
+    //   password: "",
+    //   image: "",
+    // });
+    // console.log(user);
+    // navigate("/");
+  };
+  // console.log(user);
   return (
-    <form onSubmit={onsubmit} className="form">
+    <form onSubmit={onSubmit} className="form">
       <h2>Register</h2>
       <TextField
         id="standard-basic"
