@@ -18,7 +18,12 @@ const pages = [
   { title: "Products", path: "/" },
   { title: "Add Products", path: "/add" },
 ];
-const settings = ["Register", "Account", "Dashboard", "Logout"];
+const settings = [
+  { title: "Register", path: "register" },
+  { title: "Account", path: "account" },
+  { title: "Dashboard", path: "dashboard" },
+  { title: "Logout", path: "logout" },
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -156,10 +161,16 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+              {settings.map((setting, index) => (
+                <Link
+                  style={{ textDecoration: "none" }}
+                  key={index}
+                  to={setting.path}
+                >
+                  <MenuItem key={index} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting.title}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

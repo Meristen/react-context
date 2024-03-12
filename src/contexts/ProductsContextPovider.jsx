@@ -5,6 +5,10 @@ export const productsContext = createContext();
 
 const ProductsContextPovider = ({ children }) => {
   const PRODUCTS_API = "http://localhost:8005/products";
+  const USERS_API = "http://localhost:8005/users";
+
+  const [users, setUsers] = useState([]);
+
   const [products, setProduct] = useState([]);
   const [editedProduct, setEditedProduct] = useState(null);
 
